@@ -1,0 +1,25 @@
+Mount Path
+/var/www/localhost/htdocs/api
+--
+base url: https://renderer.endor.dev/api
+--Sinh key
+POST license_api.php?action=generate
+Content-Type: application/x-www-form-urlencoded
+userId=123e4567-e89b-12d3-a456-426614174000&productId=prod01&licenseInfo={"packcode":"Gói A","quantity":10,"startdate":"2025-08-01","endate":"2025-12-31"}
+
+https://renderer.endor.dev/api/license_api.php?action=generate&userId=223e4567-e89b-12d3-a456-426614174000&productId=prod02&licenseInfo={"packcode":"Gói A","quantity":10,"startdate":"2025-08-01","endate":"2025-12-31"}
+
+--kích hoạt key
+POST license_api.php?action=activate&key=<licenseKey>
+--Kiểm tra key
+GET license_api.php?action=check&key=<licenseKey>
+
+CREATE TABLE `license` (
+  `userId` char(36) NOT NULL,
+  `productId` varchar(50) NOT NULL,
+  `licenseKey` varchar(64) NOT NULL PRIMARY KEY,
+  `licenseInfo` JSON NOT NULL,
+  `activatedAt` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+

@@ -1,0 +1,23 @@
+
+CREATE TABLE `license_subscriber` (
+  `userId` char(36) NOT NULL,
+  `productId` varchar(50) NOT NULL,
+  `licenseKey` varchar(64) NOT NULL PRIMARY KEY,
+  `licenseInfo` JSON NOT NULL,
+  `activatedAt` datetime DEFAULT NULL,
+  
+)  DEFAULT CHARSET=utf8mb4;
+
+license_subscriber
+`userId` char(36) NOT NULL,
+  `productId` varchar(50) NOT NULL,
+  `licenseKey` varchar(64) NOT NULL PRIMARY KEY,
+  `licenseInfo` JSON NOT NULL,
+  `activatedAt` datetime DEFAULT NULL,
+  taxcode varchar(20),
+    customername varchar(20),
+    
+    
+    code php tạo dịch vụ check cứ để mùng 1 hàng tháng thì tính toán sinh phiếu thu
+    
+  
